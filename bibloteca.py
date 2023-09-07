@@ -14,7 +14,8 @@ def ejemplares_prestados():
 
 def registrar_nuevo_libro():
     nuevo_libro = l.nuevo_libro()
-    #completar
+    libros.append(nuevo_libro)
+    print(f"Libro registrado con éxito. Código del libro: {nuevo_libro['cod']}")
     return None
 
 def eliminar_ejemplar_libro():
@@ -26,9 +27,5 @@ def prestar_ejemplar_libro():
     return None
 
 def devolver_ejemplar_libro():
-    #completar
-    return None
-
-def nuevo_libro():
     #completar
     return None
