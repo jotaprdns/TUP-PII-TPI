@@ -1,3 +1,5 @@
+import os
+import bibloteca as b
 import libro as l
 
 # Crear una lista vacía para almacenar los libros
@@ -18,9 +20,16 @@ def registrar_nuevo_libro():
     print(f"Libro registrado con éxito. Código del libro: {nuevo_libro['cod']}")
     return None
 
-def eliminar_ejemplar_libro():
+def eliminar_ejemplar_libro(codigo):
     #completar
-    return None
+        for libro in libros:
+            if libro['cod'] == codigo:
+                if libro['cant_ej_ad'] > 0:
+                    libro['cant_ej_ad'] -= 1
+                    print(f"Se eliminó un ejemplar de {libro['titulo']} de {libro['autor']}")
+                else:
+                    print("No hay ejemplares para eliminar.")
+                return None
 
 def prestar_ejemplar_libro():
     #completar
