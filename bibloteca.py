@@ -10,7 +10,13 @@ libros.append(l.libro2)
 libros.append(l.libro3)
 
 def ejemplares_prestados():
-    
+    for libro in libros:
+        cant_ej_pr = libro['cant_ej_pr']
+        if cant_ej_pr > 0:
+            print(f"Para el libro '{libro['titulo']}' hay {cant_ej_pr} ejemplares prestados.")
+
+        if all(libro['cant_ej_pr'] == 0 for libro in libros):
+            print("No hay ejemplares prestados.") 
     return None
 
 def registrar_nuevo_libro():
@@ -20,7 +26,14 @@ def registrar_nuevo_libro():
     return None
 
 def eliminar_ejemplar_libro():
-    #completar
+    buscar_codigo = input("Ingrese código de libro a eliminar: ")
+    for libro in libros:
+        if libro['cod'] == buscar_codigo:
+            if libro['cant_ej_ad'] > 0:
+                libro['cant_ej_ad'] -= 1
+                print(f"Se eliminó un ejemplar de {libro['titulo']} de {libro['autor']}")
+            else:
+                print("No hay ejemplares para eliminar.")
     return None
 
 def prestar_ejemplar_libro():
