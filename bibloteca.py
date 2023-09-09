@@ -9,7 +9,7 @@ libros.append(l.libro2)
 libros.append(l.libro3)
 
 def ejemplares_prestados():
-    # completar
+    
     return None
 
 def registrar_nuevo_libro():
@@ -23,7 +23,21 @@ def eliminar_ejemplar_libro():
     return None
 
 def prestar_ejemplar_libro():
-    #completar
+    buscar_codigo = input("Ingrese codigo del libro a prestar: ")
+    for libro in libros:
+        if buscar_codigo == libro["cod"]:
+            if libro["cant_ej_ad"] == 0:
+                print("No hay ejemplares disponibles para prestamo")
+            else:
+                libro["cant_ej_ad"] -= 1
+                print(f"Actualizado el stock de libros con codigo {buscar_codigo}, por lo que existen una stock para prestar de: ")
+                print(libro["cant_ej_ad"])
+                libro["cant_ej_pr"] += 1
+                print(f"El total de libros prestados con el codigo {buscar_codigo} es de: ")
+                print(libro["cant_ej_pr"])
+            return
+    print(f"El codigo {buscar_codigo}, no se encuentra en la base de datos, verifique e intente nuevamente")
+    
     return None
 
 def devolver_ejemplar_libro():
