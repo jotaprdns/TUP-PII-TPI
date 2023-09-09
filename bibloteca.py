@@ -2,6 +2,7 @@ import os
 import bibloteca as b
 import libro as l
 
+
 # Crear una lista vacía para almacenar los libros
 libros = []
 
@@ -11,8 +12,14 @@ libros.append(l.libro2)
 libros.append(l.libro3)
 
 def ejemplares_prestados():
-    # completar
-    return None
+    for libro in libros:
+        cant_ej_pr = libro['cant_ej_pr']
+    if cant_ej_pr > 0:
+        print(f"Para el libro '{libro['titulo']}' hay {cant_ej_pr} ejemplares prestados.")
+
+    if all(libro['cant_ej_pr'] == 0 for libro in libros):
+        print("No hay ejemplares prestados.")
+    return None        
 
 def registrar_nuevo_libro():
     nuevo_libro = l.nuevo_libro()

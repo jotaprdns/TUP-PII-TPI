@@ -22,7 +22,7 @@ while respuesta != "salir":
     os.system ("cls") #Limpiar pantalla
     if opt.isnumeric():
         if int(opt) == 1:
-            b.ejemplares_prestados()
+            b.prestar_ejemplar_libro()
             print()
         elif int(opt) == 2:
             b.devolver_ejemplar_libro()
