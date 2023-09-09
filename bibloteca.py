@@ -27,10 +27,10 @@ def registrar_nuevo_libro():
     print(f"Libro registrado con éxito. Código del libro: {nuevo_libro['cod']}")
     return None
 
-def eliminar_ejemplar_libro(codigo):
-    #completar
+def eliminar_ejemplar_libro():
+        buscar_codigo = input("Ingrese código de libro a eliminar: ")
         for libro in libros:
-            if libro['cod'] == codigo:
+            if libro['cod'] == buscar_codigo:
                 if libro['cant_ej_ad'] > 0:
                     libro['cant_ej_ad'] -= 1
                     print(f"Se eliminó un ejemplar de {libro['titulo']} de {libro['autor']}")
